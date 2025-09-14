@@ -98,12 +98,15 @@ const Login = () => {
           ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}
       >
         {/* Theme Toggle */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="absolute top-4 right-4 border-2 border-black rounded-full p-2 bg-white dark:bg-gray-900 hover:scale-105 transition"
-        >
-          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
+     <button
+  onClick={() => setDarkMode(!darkMode)}
+  className={`absolute top-4 right-4 border-2 border-black rounded-full p-2 hover:scale-105 transition 
+    ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}
+>
+  {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+</button>
+
+
 
         <h1 className="text-center text-3xl font-bold mb-6">
           {forgotMode ? "RESET PASSWORD" : "LOGIN"}
