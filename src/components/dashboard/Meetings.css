@@ -1,0 +1,49 @@
+/* Dark styling overrides for react-calendar */
+.react-calendar {
+  background-color: #1f2937; /* Tailwind's gray-800 */
+  color: #f9fafb; /* Tailwind's gray-100 */
+  border: none;
+}
+
+.react-calendar__tile {
+  background: none;
+  color: #f9fafb;
+  position: relative; /* required for ::after */
+}
+
+.react-calendar__tile--now {
+  background: #374151; /* Tailwind's gray-700 */
+  border-radius: 0.5rem;
+}
+
+.react-calendar__tile:hover {
+  background: #4b5563; /* Tailwind's gray-600 */
+}
+
+.react-calendar__tile--active {
+  background: #2563eb; /* Tailwind's blue-600 */
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.react-calendar__navigation button {
+  color: #f9fafb;
+}
+
+.react-calendar__month-view__weekdays {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+/* Blue underline for meeting dates */
+.has-meeting abbr::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px; /* thickness of underline */
+  background-color: #3b82f6; /* Tailwind's blue-500 */
+  border-radius: 2px;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+}

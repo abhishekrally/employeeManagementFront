@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/auth/Login";
-import AdminDashboard from "./components/dashboard/Admindashboard";
-import Employee from "./components/dashboard/Employee";
+import AdminDashboard from "./components/dashboard/teamlead/Admindashboard";
+import Employee from "./components/dashboard/employeedashboard/Employee";
 import CreateMember from "./components/dashboard/CreateMember";
 
-const ProtectedRoute = ({ role, children }) => {
+const ProtectedRoute = ({ role, element }) => {
   const storedRole = localStorage.getItem("role")?.toLowerCase();
   const token = localStorage.getItem("token");
 
@@ -12,7 +12,7 @@ const ProtectedRoute = ({ role, children }) => {
     return <Navigate to="/" replace />;
   }
 
-  return children;
+  return element;
 };
 
 const App = () => {
@@ -20,9 +20,18 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/admin" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>} />
-        <Route path="/admin/createmember" element={<ProtectedRoute role="admin"><CreateMember /></ProtectedRoute>} />
-        <Route path="/employee" element={<ProtectedRoute role="employee"><Employee /></ProtectedRoute>} />
+        <Route
+          path="/admin"
+          element={<ProtectedRoute role="admin" element={<AdminDashboard />} />}
+        />
+        <Route
+          path="/admin/createmember"
+          element={<ProtectedRoute role="admin" element={<CreateMember />} />}
+        />
+        <Route
+          path="/employee"
+          element={<ProtectedRoute role="employee" element={<Employee />} />}
+        />
       </Routes>
     </Router>
   );
