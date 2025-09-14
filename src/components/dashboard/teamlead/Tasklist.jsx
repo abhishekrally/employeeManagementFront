@@ -1,5 +1,5 @@
 import React from "react";
-const TaskList = ({ taskList, handleDeleteTask }) => {
+const Tasklist = ({ taskList, handleDeleteTask }) => {
   return (
     <div className="bg-gray-800 mt-3 p-6 rounded-lg shadow-lg text-white max-w-2xl w-full">
       <h2 className="text-2xl font-bold mb-6 text-center">Task List</h2>
@@ -55,4 +55,4 @@ const TaskList = ({ taskList, handleDeleteTask }) => {
   );
 };
 
-export default TaskList;
+export default Tasklist;

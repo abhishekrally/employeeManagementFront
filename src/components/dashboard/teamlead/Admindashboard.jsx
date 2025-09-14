@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import Sidebar from "./Sidebar";
 import TaskForm from "./TaskForm";
-import TaskList from "./TaskList";
+import Tasklist from "./Tasklist";
 import Dashboard from "./Dashboard";
 import Meetings from "../Meetings";
 
@@ -138,7 +138,7 @@ const Admindashboard = () => {
             />
           )}
           {activeView === "tasklist" && (
-            <TaskList taskList={taskList} handleDeleteTask={handleDeleteTask} />
+            <Tasklist taskList={taskList} handleDeleteTask={handleDeleteTask} />
           )}
           {activeView === "meetings" && <Meetings/>}
           {activeView === "reports" && <div>Reports Component</div>}
