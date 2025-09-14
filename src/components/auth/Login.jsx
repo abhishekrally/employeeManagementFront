@@ -100,7 +100,7 @@ const Login = () => {
         {/* Theme Toggle */}
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="absolute top-4 right-4 border-2 border-black rounded-full p-2 bg-white dark:bg-gray-800 hover:scale-105 transition"
+          className="absolute top-4 right-4 border-2 border-black rounded-full p-2 bg-white dark:bg-gray-900 hover:scale-105 transition"
         >
           {darkMode ? <Sun size={18} /> : <Moon size={18} />}
         </button>
